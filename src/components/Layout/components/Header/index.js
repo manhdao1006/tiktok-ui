@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 // import Tippy from '@tippyjs/react';
 // import 'tippy.js/dist/tippy.css'; // optional
 
+import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -62,7 +63,26 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <div>Action</div>
+                    <Button upload leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                        Upload
+                    </Button>
+                    {/* Nút kiểu primary thì truyền vào 1 prop primary */}
+                    <Button primary>Log in</Button>
+                    {/* Nút kiểu rounded thì truyền vào 1 prop rounded 
+                        Nút có custom riêng nên truyền vào thêm 1 className
+                    <Button rounded className={cx('custom-login')}>
+                        Get app
+                    </Button>
+                        Nút kiểu outline thì truyền vào 1 prop outline 
+                        Nút size small
+                    <Button outline small>
+                        Follow
+                    </Button>
+                        Nút kiểu outline thì truyền vào 1 prop outline 
+                        Nút size large
+                    <Button outline large>
+                        Log in
+                    </Button>*/}
                 </div>
             </div>
         </header>
