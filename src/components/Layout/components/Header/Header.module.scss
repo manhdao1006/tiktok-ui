@@ -19,9 +19,6 @@
     justify-content: space-between;
 }
 
-.logo {
-}
-
 .search,
 .search-result {
     width: 361px;
@@ -102,4 +99,12 @@
 .custom-login {
     font-size: 1.4rem;
     color: rgba(22, 24, 35, 0.75);
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 20px;
+    padding: 4px 8px;
+    background-color: transparent;
+    cursor: pointer;
 }
