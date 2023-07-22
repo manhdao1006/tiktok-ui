@@ -24,6 +24,8 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 // console.log(images.logo);
@@ -144,7 +146,8 @@ function Header() {
 
                         <button className={cx('search-btn')}>
                             {/* Search */}
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -154,17 +157,17 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon icon={faCloudUpload} />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessageIcon icon={faMessage} />
                                 </button>
                             </Tippy>
-                            <Tippy delay={[0, 200]} content="Notifications" placement="bottom">
+                            <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faBell} />
+                                    <InboxIcon icon={faBell} />
                                 </button>
                             </Tippy>
                         </>
@@ -196,7 +199,7 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avater')}
                                 alt="Đào Lê Phương Hoa"
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/42a81079b5885e152707b170d63ba2df~c5_100x100.jpeg?x-expires=1689994800&x-signature=%2FmsNye7K4dwIWizEiWnxmpMWOFQ%3D"
