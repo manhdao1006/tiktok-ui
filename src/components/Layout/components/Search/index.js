@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
+import * as searchServices from '~/apiServices/searchServices';
 import { useDebounce } from '~/hooks';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
@@ -28,18 +29,17 @@ function Search() {
             return;
         }
 
-        setLoading(true);
+        const fetchAPI = async () => {
+            setLoading(true);
 
-        // encodeURIComponent mã hóa key user enter để tránh fail
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+            const result = await searchServices.search(debounced);
+
+            setSearchResult(result);
+
+            setLoading(false);
+        };
+
+        fetchAPI();
     }, [debounced]);
 
     const handleClear = () => {
