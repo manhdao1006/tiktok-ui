@@ -1,4 +1,4 @@
-import * as request from '~/utils/request';
+import * as httpRequest from '~/utils/httpRequest';
 
 export const search = async (q, type = 'less') => {
     // encodeURIComponent mã hóa key user enter để tránh fail
@@ -7,7 +7,7 @@ export const search = async (q, type = 'less') => {
     // Fetch
 
     try {
-        const res = await request.get('users/search', {
+        const res = await httpRequest.get('users/search', {
             params: {
                 q,
                 type,
