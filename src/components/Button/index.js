@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom'; // Chuyển trang nội bộ trong 1 tragn Web
 import styles from './Button.module.scss';
@@ -64,5 +65,11 @@ function Button({
         </Component>
     );
 }
+
+Button.propTypes = {
+    // là những gì  có thể render được
+    // isRequired kà bắt buộc phải có children, nếu ko sẽ báo undefined
+    children: PropTypes.node.isRequired,
+};
 
 export default Button;
