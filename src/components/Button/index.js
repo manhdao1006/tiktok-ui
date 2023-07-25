@@ -69,7 +69,22 @@ function Button({
 Button.propTypes = {
     // là những gì  có thể render được
     // isRequired kà bắt buộc phải có children, nếu ko sẽ báo undefined
+    // children: PropTypes.node.isRequired,
+
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    upload: PropTypes.bool,
+    rounded: PropTypes.bool,
+    disabled: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
 };
 
 export default Button;
