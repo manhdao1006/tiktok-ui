@@ -10,14 +10,6 @@
 
     &.active {
         color: var(--primary);
-
-        .icon {
-            display: none;
-        }
-
-        .active-icon {
-            display: block;
-        }
     }
 
     &:hover {
@@ -27,8 +19,4 @@
 
 .title {
     margin-left: 10px;
-}
-
-.active-icon {
-    display: none;
 }
